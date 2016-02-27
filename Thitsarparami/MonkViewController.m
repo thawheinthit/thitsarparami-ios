@@ -43,13 +43,6 @@
     [self.tayarTblView addSubview:self.refreshControl];
     
     [self loadItems];
-//    NSLog(@"Count %lul", (unsigned long)[self.vm.monk.dhammaArray count]);
-//        NSLog(@"ViewModel myself %@", self.vm.monk.dhammaArray);
-    
-//    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
-//    [refreshControl addTarget:self action:@selector(loadItems) forControlEvents:UIControlEventValueChanged];
-//    [self.tayarTblView addSubview:refreshControl];
-    
 
 
 }
@@ -70,10 +63,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    //    return tableData.count;
-//    return [self mockMedia].count;
     return self.vm.monk.dhammaArray.count;
-//    return 0;
     
 }
 
@@ -82,19 +72,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TayarCell" forIndexPath:indexPath];
     
-//    cell.textLabel.text = [mainArray objectAtIndex:indexPath.row];
-    
-//    id<AUMediaItem> item = [[self mockMedia] objectAtIndex:indexPath.row];
-//    cell.textLabel.text = item.title;
-//    
-//    
-//    return cell;
-    
-    
     Dhamma *tmpDhamma = [self.vm.monk.dhammaArray objectAtIndex:indexPath.row];
     
-    
-
     cell.textLabel.text = tmpDhamma.title;
     cell.textLabel.textColor = [Utility colorFromHexString:@"#555555"];
     [cell.textLabel.font fontWithSize:14];
@@ -104,13 +83,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"viewController"];
     PlayerViewController *controller = (PlayerViewController *) [navigationController visibleViewController];
-//    if (indexPath.row == 0) {
-//        controller.item = nil;
-//        controller.collection = [[self mockMedia] objectAtIndex:indexPath.row];
-//    } else {
-//        controller.collection = nil;
-//        controller.item = [[self mockMedia] objectAtIndex:indexPath.row];
-//    }
     
     controller.item = [self.vm.monk.dhammaArray objectAtIndex:indexPath.row];
     

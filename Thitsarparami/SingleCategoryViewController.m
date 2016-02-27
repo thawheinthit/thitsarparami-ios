@@ -90,9 +90,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
-
     
     Monk *tmpMonk = self.viewModel.singleCategory.monkArray[indexPath.row];
     
@@ -103,10 +100,6 @@
     tblViewCell.monkName.text= tmpMonk.monkName;
     
     tblViewCell.tayarCount.text = [tmpMonk.dhammaCount stringValue];
-    
-    
-    
-//    tblViewCell.monkImage.image = [UIImage imageNamed:@"loading-Icon"];
     
     dispatch_queue_t imageQueue = dispatch_queue_create("singleMonkQueue", nil);
     dispatch_async(imageQueue, ^{
@@ -125,12 +118,6 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    //    DhammaCategory *tmpCategory = [self.viewModel.categories objectAtIndex:indexPath.section];
-    
-    //    self.vm.monk = tmpCategory.monkArray[indexPath.row];
-    //    self.monk = tmpCategory.monkArray[indexPath.row];
-    
-    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -140,10 +127,6 @@
         NSIndexPath *path = [self.monkTblView indexPathForSelectedRow];
         
         Monk *tmpMonk = [self.viewModel.singleCategory.monkArray objectAtIndex:path.row];
-        
-        //        MonkDhammaViewModel *vm = [MonkDhammaViewModel new];
-        //        self.vm.monk = self.monk;
-        //        destination.vm = self.vm;
         self.monkDhammaVM.monk = tmpMonk;
         destination.vm = self.monkDhammaVM;
         
