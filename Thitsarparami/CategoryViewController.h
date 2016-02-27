@@ -15,12 +15,13 @@
 #import "Utility.h"
 
 
-@interface CategoryViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface CategoryViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UITabBarControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *categoryTblView;
 @property (nonatomic, strong) DhammaCategoryViewModel *viewModel;
 @property (nonatomic, strong) Monk *monk;
 @property (nonatomic, strong) MonkDhammaViewModel *vm;
 @property (nonatomic,strong) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UITabBar *tabbar;
 
 @end

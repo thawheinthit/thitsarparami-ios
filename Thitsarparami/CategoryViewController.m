@@ -24,7 +24,7 @@
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Thitsarparami Society";
     
-    
+
 //    UIImage *addImage = [UIImage imageNamed:@"logo-top"];
 //    UIButton *addButton = [UIButton buttonWithType:UIButtonTypeCustom];
 //    [addButton setFrame:CGRectMake(0, 0, addImage.size.width, addImage.size.height)];

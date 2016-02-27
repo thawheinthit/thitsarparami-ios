@@ -27,6 +27,8 @@
     
     [[UINavigationBar appearance]setTranslucent:NO];
     
+
+    [[UITabBar appearance]setTintColor:[Utility colorFromHexString:@"#801423"]];
     
     return YES;
 }
