@@ -6,7 +6,9 @@
 //  Copyright © 2015 Thaw Hein Thit. All rights reserved.
 //
 
+
 #import "AppDelegate.h"
+#import "Utility.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    [[UINavigationBar appearance]setBarTintColor:[Utility colorFromHexString:@"#801423"]];
+    [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
+    
+    [[UINavigationBar appearance]setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
+    
+    [[UINavigationBar appearance]setTranslucent:NO];
+    
+    
     return YES;
 }
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FCE7FF216B25BD8462273BE /* libPods-Thitsarparami.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E08FFCC97FBBED71DA46083B /* libPods-Thitsarparami.a */; };
+		54800B85B0FA49EE5C8D000D /* libPods-ThitsarparamiTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1E01EDA275A0A6792ADC8BB /* libPods-ThitsarparamiTests.a */; };
 		8E00B3811C1D3F12007474FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E00B3801C1D3F12007474FA /* main.m */; };
 		8E00B3841C1D3F12007474FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E00B3831C1D3F12007474FA /* AppDelegate.m */; };
 		8E00B3871C1D3F12007474FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E00B3861C1D3F12007474FA /* ViewController.m */; };
@@ -15,6 +17,29 @@
 		8E00B38F1C1D3F12007474FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E00B38D1C1D3F12007474FA /* LaunchScreen.storyboard */; };
 		8E00B39A1C1D3F12007474FA /* ThitsarparamiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E00B3991C1D3F12007474FA /* ThitsarparamiTests.m */; };
 		8E00B3A51C1D3F12007474FA /* ThitsarparamiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E00B3A41C1D3F12007474FA /* ThitsarparamiUITests.m */; };
+		8E00B3BB1C1D4214007474FA /* Zawgyi_One.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E00B3BA1C1D4202007474FA /* Zawgyi_One.ttf */; };
+		8E00B3C61C1D456D007474FA /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E00B3C51C1D456D007474FA /* Model.m */; };
+		8E00B3C91C1D521C007474FA /* DhammaCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E00B3C81C1D521C007474FA /* DhammaCategory.m */; };
+		8E00B3CC1C1D5233007474FA /* Monk.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E00B3CB1C1D5233007474FA /* Monk.m */; };
+		8E00B3CF1C1D5241007474FA /* Dhamma.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E00B3CE1C1D5241007474FA /* Dhamma.m */; };
+		8E00B3D21C1D5297007474FA /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E00B3D11C1D5297007474FA /* Utility.m */; };
+		8E00B3D51C1D5430007474FA /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E00B3D41C1D5430007474FA /* ViewModel.m */; };
+		8E04F5C21C5A644100D53885 /* CategoryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E04F5C11C5A644100D53885 /* CategoryService.m */; };
+		8E2061BF1C54F4A3004BB863 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E2061BE1C54F4A3004BB863 /* PlayerViewController.m */; };
+		8E31850D1C69D7A90086DE30 /* SingleCategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E31850C1C69D7A90086DE30 /* SingleCategoryViewController.m */; };
+		8E3F4FCA1C5CB02900C8F065 /* MonkService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F4FC91C5CB02900C8F065 /* MonkService.m */; };
+		8E3F4FCD1C5D1A9C00C8F065 /* DhammaService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F4FCC1C5D1A9C00C8F065 /* DhammaService.m */; };
+		8E3F4FD31C5DB86C00C8F065 /* MonkDhammaViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3F4FD21C5DB86C00C8F065 /* MonkDhammaViewModel.m */; };
+		8E67A8D91C54D81F00FA2574 /* MonkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E67A8D81C54D81F00FA2574 /* MonkViewController.m */; };
+		8E90AF0F1C536F000080A737 /* MonkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E90AF0E1C536F000080A737 /* MonkTableViewCell.m */; };
+		8E90AF1A1C53727D0080A737 /* mingon-sayardaw.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E90AF171C53727D0080A737 /* mingon-sayardaw.png */; };
+		8E90AF1B1C53727D0080A737 /* mingon-sayardaw@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E90AF181C53727D0080A737 /* mingon-sayardaw@2x.png */; };
+		8E90AF1C1C53727D0080A737 /* mingon-sayardaw@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E90AF191C53727D0080A737 /* mingon-sayardaw@3x.png */; };
+		8E9851F21C54BFD700EF30DA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E9851F11C54BFD700EF30DA /* AVFoundation.framework */; };
+		8EDFCDD31C1D57650022558E /* DhammaCategoryViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDFCDD21C1D57650022558E /* DhammaCategoryViewModel.m */; };
+		8EDFCDD71C1D57D00022558E /* APIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EDFCDD61C1D57D00022558E /* APIClient.m */; };
+		8EE65D731C639BD400F6D201 /* live-stream.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EE65D721C639BD400F6D201 /* live-stream.png */; };
+		8EE65D761C639D0C00F6D201 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EE65D751C639D0C00F6D201 /* CategoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +76,53 @@
 		8E00B3A01C1D3F12007474FA /* ThitsarparamiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThitsarparamiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E00B3A41C1D3F12007474FA /* ThitsarparamiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThitsarparamiUITests.m; sourceTree = "<group>"; };
 		8E00B3A61C1D3F12007474FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E00B3B61C1D3FFA007474FA /* Define.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Define.h; sourceTree = "<group>"; };
+		8E00B3BA1C1D4202007474FA /* Zawgyi_One.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zawgyi_One.ttf; sourceTree = "<group>"; };
+		8E00B3C41C1D456D007474FA /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		8E00B3C51C1D456D007474FA /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		8E00B3C71C1D521C007474FA /* DhammaCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DhammaCategory.h; sourceTree = "<group>"; };
+		8E00B3C81C1D521C007474FA /* DhammaCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DhammaCategory.m; sourceTree = "<group>"; };
+		8E00B3CA1C1D5233007474FA /* Monk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Monk.h; sourceTree = "<group>"; };
+		8E00B3CB1C1D5233007474FA /* Monk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Monk.m; sourceTree = "<group>"; };
+		8E00B3CD1C1D5241007474FA /* Dhamma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dhamma.h; sourceTree = "<group>"; };
+		8E00B3CE1C1D5241007474FA /* Dhamma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dhamma.m; sourceTree = "<group>"; };
+		8E00B3D01C1D5297007474FA /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		8E00B3D11C1D5297007474FA /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		8E00B3D31C1D5430007474FA /* ViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel.h; sourceTree = "<group>"; };
+		8E00B3D41C1D5430007474FA /* ViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModel.m; sourceTree = "<group>"; };
+		8E04F5C01C5A644100D53885 /* CategoryService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryService.h; sourceTree = "<group>"; };
+		8E04F5C11C5A644100D53885 /* CategoryService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryService.m; sourceTree = "<group>"; };
+		8E2061BD1C54F4A3004BB863 /* PlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		8E2061BE1C54F4A3004BB863 /* PlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
+		8E31850B1C69D7A90086DE30 /* SingleCategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCategoryViewController.h; sourceTree = "<group>"; };
+		8E31850C1C69D7A90086DE30 /* SingleCategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleCategoryViewController.m; sourceTree = "<group>"; };
+		8E3F4FC81C5CB02900C8F065 /* MonkService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkService.h; sourceTree = "<group>"; };
+		8E3F4FC91C5CB02900C8F065 /* MonkService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonkService.m; sourceTree = "<group>"; };
+		8E3F4FCB1C5D1A9C00C8F065 /* DhammaService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DhammaService.h; sourceTree = "<group>"; };
+		8E3F4FCC1C5D1A9C00C8F065 /* DhammaService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DhammaService.m; sourceTree = "<group>"; };
+		8E3F4FD11C5DB86C00C8F065 /* MonkDhammaViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkDhammaViewModel.h; sourceTree = "<group>"; };
+		8E3F4FD21C5DB86C00C8F065 /* MonkDhammaViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonkDhammaViewModel.m; sourceTree = "<group>"; };
+		8E67A8D71C54D81F00FA2574 /* MonkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkViewController.h; sourceTree = "<group>"; };
+		8E67A8D81C54D81F00FA2574 /* MonkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonkViewController.m; sourceTree = "<group>"; };
+		8E90AF0D1C536F000080A737 /* MonkTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonkTableViewCell.h; sourceTree = "<group>"; };
+		8E90AF0E1C536F000080A737 /* MonkTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MonkTableViewCell.m; sourceTree = "<group>"; };
+		8E90AF171C53727D0080A737 /* mingon-sayardaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mingon-sayardaw.png"; sourceTree = "<group>"; };
+		8E90AF181C53727D0080A737 /* mingon-sayardaw@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mingon-sayardaw@2x.png"; sourceTree = "<group>"; };
+		8E90AF191C53727D0080A737 /* mingon-sayardaw@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mingon-sayardaw@3x.png"; sourceTree = "<group>"; };
+		8E9851F11C54BFD700EF30DA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8EDFCDD11C1D57650022558E /* DhammaCategoryViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DhammaCategoryViewModel.h; sourceTree = "<group>"; };
+		8EDFCDD21C1D57650022558E /* DhammaCategoryViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DhammaCategoryViewModel.m; sourceTree = "<group>"; };
+		8EDFCDD51C1D57D00022558E /* APIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIClient.h; sourceTree = "<group>"; };
+		8EDFCDD61C1D57D00022558E /* APIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIClient.m; sourceTree = "<group>"; };
+		8EE65D721C639BD400F6D201 /* live-stream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "live-stream.png"; sourceTree = "<group>"; };
+		8EE65D741C639D0C00F6D201 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		8EE65D751C639D0C00F6D201 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		8FD12E9EB7944993B4899ABD /* Pods-Thitsarparami.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thitsarparami.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thitsarparami/Pods-Thitsarparami.release.xcconfig"; sourceTree = "<group>"; };
+		C552CDDC930972EDB8493F45 /* Pods-ThitsarparamiTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThitsarparamiTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ThitsarparamiTests/Pods-ThitsarparamiTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D1E01EDA275A0A6792ADC8BB /* libPods-ThitsarparamiTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ThitsarparamiTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4886A59363A799B4EF77349 /* Pods-ThitsarparamiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ThitsarparamiTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ThitsarparamiTests/Pods-ThitsarparamiTests.release.xcconfig"; sourceTree = "<group>"; };
+		DA9E6C2B8E7EA4D277246AD4 /* Pods-Thitsarparami.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thitsarparami.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thitsarparami/Pods-Thitsarparami.debug.xcconfig"; sourceTree = "<group>"; };
+		E08FFCC97FBBED71DA46083B /* libPods-Thitsarparami.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Thitsarparami.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +130,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E9851F21C54BFD700EF30DA /* AVFoundation.framework in Frameworks */,
+				2FCE7FF216B25BD8462273BE /* libPods-Thitsarparami.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54800B85B0FA49EE5C8D000D /* libPods-ThitsarparamiTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +153,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27C420F451C07D9B5CDD905E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E9851F11C54BFD700EF30DA /* AVFoundation.framework */,
+				E08FFCC97FBBED71DA46083B /* libPods-Thitsarparami.a */,
+				D1E01EDA275A0A6792ADC8BB /* libPods-ThitsarparamiTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		8E00B3731C1D3F12007474FA = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +170,8 @@
 				8E00B3981C1D3F12007474FA /* ThitsarparamiTests */,
 				8E00B3A31C1D3F12007474FA /* ThitsarparamiUITests */,
 				8E00B37D1C1D3F12007474FA /* Products */,
+				9BBDA0225691C1CD82517A4E /* Pods */,
+				27C420F451C07D9B5CDD905E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,11 +188,20 @@
 		8E00B37E1C1D3F12007474FA /* Thitsarparami */ = {
 			isa = PBXGroup;
 			children = (
+				8E90AF101C5371140080A737 /* images */,
+				8E00B3B71C1D4187007474FA /* Font */,
+				8E00B3B51C1D3F8C007474FA /* ViewModel */,
+				8EDFCDD41C1D579E0022558E /* Service */,
+				8E00B3B41C1D3F82007474FA /* Model */,
+				8E00B3B31C1D3F55007474FA /* Utiity */,
+				8EDFCDDB1C1D59AD0022558E /* Controller */,
 				8E00B3821C1D3F12007474FA /* AppDelegate.h */,
 				8E00B3831C1D3F12007474FA /* AppDelegate.m */,
 				8E00B3851C1D3F12007474FA /* ViewController.h */,
 				8E00B3861C1D3F12007474FA /* ViewController.m */,
 				8E00B3881C1D3F12007474FA /* Main.storyboard */,
+				8E90AF0D1C536F000080A737 /* MonkTableViewCell.h */,
+				8E90AF0E1C536F000080A737 /* MonkTableViewCell.m */,
 				8E00B38B1C1D3F12007474FA /* Assets.xcassets */,
 				8E00B38D1C1D3F12007474FA /* LaunchScreen.storyboard */,
 				8E00B3901C1D3F12007474FA /* Info.plist */,
@@ -140,6 +236,104 @@
 			path = ThitsarparamiUITests;
 			sourceTree = "<group>";
 		};
+		8E00B3B31C1D3F55007474FA /* Utiity */ = {
+			isa = PBXGroup;
+			children = (
+				8E00B3B61C1D3FFA007474FA /* Define.h */,
+				8E00B3D01C1D5297007474FA /* Utility.h */,
+				8E00B3D11C1D5297007474FA /* Utility.m */,
+			);
+			name = Utiity;
+			sourceTree = "<group>";
+		};
+		8E00B3B41C1D3F82007474FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8E00B3C41C1D456D007474FA /* Model.h */,
+				8E00B3C51C1D456D007474FA /* Model.m */,
+				8E00B3C71C1D521C007474FA /* DhammaCategory.h */,
+				8E00B3C81C1D521C007474FA /* DhammaCategory.m */,
+				8E00B3CA1C1D5233007474FA /* Monk.h */,
+				8E00B3CB1C1D5233007474FA /* Monk.m */,
+				8E00B3CD1C1D5241007474FA /* Dhamma.h */,
+				8E00B3CE1C1D5241007474FA /* Dhamma.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		8E00B3B51C1D3F8C007474FA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				8E00B3D31C1D5430007474FA /* ViewModel.h */,
+				8E00B3D41C1D5430007474FA /* ViewModel.m */,
+				8EDFCDD11C1D57650022558E /* DhammaCategoryViewModel.h */,
+				8EDFCDD21C1D57650022558E /* DhammaCategoryViewModel.m */,
+				8E3F4FD11C5DB86C00C8F065 /* MonkDhammaViewModel.h */,
+				8E3F4FD21C5DB86C00C8F065 /* MonkDhammaViewModel.m */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		8E00B3B71C1D4187007474FA /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				8E00B3BA1C1D4202007474FA /* Zawgyi_One.ttf */,
+			);
+			name = Font;
+			sourceTree = "<group>";
+		};
+		8E90AF101C5371140080A737 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8EE65D721C639BD400F6D201 /* live-stream.png */,
+				8E90AF171C53727D0080A737 /* mingon-sayardaw.png */,
+				8E90AF181C53727D0080A737 /* mingon-sayardaw@2x.png */,
+				8E90AF191C53727D0080A737 /* mingon-sayardaw@3x.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		8EDFCDD41C1D579E0022558E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				8EDFCDD51C1D57D00022558E /* APIClient.h */,
+				8EDFCDD61C1D57D00022558E /* APIClient.m */,
+				8E04F5C01C5A644100D53885 /* CategoryService.h */,
+				8E04F5C11C5A644100D53885 /* CategoryService.m */,
+				8E3F4FC81C5CB02900C8F065 /* MonkService.h */,
+				8E3F4FC91C5CB02900C8F065 /* MonkService.m */,
+				8E3F4FCB1C5D1A9C00C8F065 /* DhammaService.h */,
+				8E3F4FCC1C5D1A9C00C8F065 /* DhammaService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		8EDFCDDB1C1D59AD0022558E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8EE65D741C639D0C00F6D201 /* CategoryViewController.h */,
+				8EE65D751C639D0C00F6D201 /* CategoryViewController.m */,
+				8E67A8D71C54D81F00FA2574 /* MonkViewController.h */,
+				8E67A8D81C54D81F00FA2574 /* MonkViewController.m */,
+				8E2061BD1C54F4A3004BB863 /* PlayerViewController.h */,
+				8E2061BE1C54F4A3004BB863 /* PlayerViewController.m */,
+				8E31850B1C69D7A90086DE30 /* SingleCategoryViewController.h */,
+				8E31850C1C69D7A90086DE30 /* SingleCategoryViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9BBDA0225691C1CD82517A4E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA9E6C2B8E7EA4D277246AD4 /* Pods-Thitsarparami.debug.xcconfig */,
+				8FD12E9EB7944993B4899ABD /* Pods-Thitsarparami.release.xcconfig */,
+				C552CDDC930972EDB8493F45 /* Pods-ThitsarparamiTests.debug.xcconfig */,
+				D4886A59363A799B4EF77349 /* Pods-ThitsarparamiTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +341,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E00B3A91C1D3F12007474FA /* Build configuration list for PBXNativeTarget "Thitsarparami" */;
 			buildPhases = (
+				5A363F6E14D01BBDAF5863A0 /* Check Pods Manifest.lock */,
 				8E00B3781C1D3F12007474FA /* Sources */,
 				8E00B3791C1D3F12007474FA /* Frameworks */,
 				8E00B37A1C1D3F12007474FA /* Resources */,
+				78754281C8BDCE2E2B20C27C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +360,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8E00B3AC1C1D3F12007474FA /* Build configuration list for PBXNativeTarget "ThitsarparamiTests" */;
 			buildPhases = (
+				C6827E22782DCC3B59CEE016 /* Check Pods Manifest.lock */,
 				8E00B3911C1D3F12007474FA /* Sources */,
 				8E00B3921C1D3F12007474FA /* Frameworks */,
 				8E00B3931C1D3F12007474FA /* Resources */,
+				E414377963C7C58A5A26F6B7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +405,7 @@
 				TargetAttributes = {
 					8E00B37B1C1D3F12007474FA = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 7982ZQT6N3;
 					};
 					8E00B3941C1D3F12007474FA = {
 						CreatedOnToolsVersion = 7.2;
@@ -243,7 +442,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E90AF1B1C53727D0080A737 /* mingon-sayardaw@2x.png in Resources */,
+				8E00B3BB1C1D4214007474FA /* Zawgyi_One.ttf in Resources */,
+				8E90AF1C1C53727D0080A737 /* mingon-sayardaw@3x.png in Resources */,
+				8EE65D731C639BD400F6D201 /* live-stream.png in Resources */,
 				8E00B38F1C1D3F12007474FA /* LaunchScreen.storyboard in Resources */,
+				8E90AF1A1C53727D0080A737 /* mingon-sayardaw.png in Resources */,
 				8E00B38C1C1D3F12007474FA /* Assets.xcassets in Resources */,
 				8E00B38A1C1D3F12007474FA /* Main.storyboard in Resources */,
 			);
@@ -265,14 +469,94 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5A363F6E14D01BBDAF5863A0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		78754281C8BDCE2E2B20C27C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Thitsarparami/Pods-Thitsarparami-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C6827E22782DCC3B59CEE016 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E414377963C7C58A5A26F6B7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ThitsarparamiTests/Pods-ThitsarparamiTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		8E00B3781C1D3F12007474FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3F4FCD1C5D1A9C00C8F065 /* DhammaService.m in Sources */,
+				8E00B3D21C1D5297007474FA /* Utility.m in Sources */,
+				8E00B3C91C1D521C007474FA /* DhammaCategory.m in Sources */,
+				8EDFCDD31C1D57650022558E /* DhammaCategoryViewModel.m in Sources */,
 				8E00B3871C1D3F12007474FA /* ViewController.m in Sources */,
+				8E90AF0F1C536F000080A737 /* MonkTableViewCell.m in Sources */,
+				8E31850D1C69D7A90086DE30 /* SingleCategoryViewController.m in Sources */,
+				8E3F4FCA1C5CB02900C8F065 /* MonkService.m in Sources */,
+				8E67A8D91C54D81F00FA2574 /* MonkViewController.m in Sources */,
+				8E00B3CF1C1D5241007474FA /* Dhamma.m in Sources */,
+				8EDFCDD71C1D57D00022558E /* APIClient.m in Sources */,
+				8E00B3CC1C1D5233007474FA /* Monk.m in Sources */,
 				8E00B3841C1D3F12007474FA /* AppDelegate.m in Sources */,
+				8E04F5C21C5A644100D53885 /* CategoryService.m in Sources */,
+				8E00B3D51C1D5430007474FA /* ViewModel.m in Sources */,
+				8E2061BF1C54F4A3004BB863 /* PlayerViewController.m in Sources */,
+				8EE65D761C639D0C00F6D201 /* CategoryViewController.m in Sources */,
+				8E3F4FD31C5DB86C00C8F065 /* MonkDhammaViewModel.m in Sources */,
 				8E00B3811C1D3F12007474FA /* main.m in Sources */,
+				8E00B3C61C1D456D007474FA /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,28 +693,39 @@
 		};
 		8E00B3AA1C1D3F12007474FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA9E6C2B8E7EA4D277246AD4 /* Pods-Thitsarparami.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Thaw Thit (G6D5662P76)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Thitsarparami/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.otsaw.Thitsarparami;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thitsarparamisociety.thitsarApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		8E00B3AB1C1D3F12007474FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FD12E9EB7944993B4899ABD /* Pods-Thitsarparami.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Thaw Thit (G6D5662P76)";
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Thitsarparami/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.otsaw.Thitsarparami;
+				PRODUCT_BUNDLE_IDENTIFIER = com.thitsarparamisociety.thitsarApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		8E00B3AD1C1D3F12007474FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C552CDDC930972EDB8493F45 /* Pods-ThitsarparamiTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ThitsarparamiTests/Info.plist;
@@ -443,6 +738,7 @@
 		};
 		8E00B3AE1C1D3F12007474FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4886A59363A799B4EF77349 /* Pods-ThitsarparamiTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = ThitsarparamiTests/Info.plist;
@@ -496,6 +792,7 @@
 				8E00B3AB1C1D3F12007474FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E00B3AC1C1D3F12007474FA /* Build configuration list for PBXNativeTarget "ThitsarparamiTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +801,7 @@
 				8E00B3AE1C1D3F12007474FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8E00B3AF1C1D3F12007474FA /* Build configuration list for PBXNativeTarget "ThitsarparamiUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +810,7 @@
 				8E00B3B11C1D3F12007474FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
