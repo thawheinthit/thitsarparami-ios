@@ -75,8 +75,6 @@
     Dhamma *tmpDhamma = [self.vm.monk.dhammaArray objectAtIndex:indexPath.row];
     
     cell.textLabel.text = tmpDhamma.title;
-    cell.textLabel.textColor = [Utility colorFromHexString:@"#555555"];
-    [cell.textLabel.font fontWithSize:14];
     return cell;
 }
 

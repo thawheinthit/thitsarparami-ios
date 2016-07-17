@@ -18,7 +18,7 @@
 @property (nonatomic, strong) NSString *remotePath;
 
 @property (nonatomic, strong) NSString *fileTypeExtension;
-
+@property (nonatomic, strong) UIImage *monkImage;
 
 
 @property (nonatomic, strong) NSString *dhammaTitle;

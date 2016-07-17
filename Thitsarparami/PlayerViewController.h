@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Dhamma.h"
+#import "MarqueeLabel.h"
 
 @interface PlayerViewController : UIViewController
 
@@ -16,5 +17,7 @@
 - (IBAction)close:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 @property (weak, nonatomic) IBOutlet UIButton *pauseButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *closeBtn;
+- (IBAction)shareButton:(id)sender;
 
 @end

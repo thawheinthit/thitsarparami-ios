@@ -9,6 +9,7 @@
 #import "PlayerViewController.h"
 #import <AUMediaPlayer/AUMediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
+#import <Social/Social.h>
 
 
 static void *AUMediaPlaybackCurrentTimeObservationContext = &AUMediaPlaybackCurrentTimeObservationContext;
@@ -32,7 +33,9 @@ static void *AUMediaPlaybackTimeValidityObservationContext = &AUMediaPlaybackTim
 
 
 @property (weak, nonatomic) IBOutlet UILabel *authorLabel;
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet MarqueeLabel *titleLabel;
+
 
 
 @property (weak, nonatomic) IBOutlet UISlider *slider;
@@ -45,10 +48,128 @@ static void *AUMediaPlaybackTimeValidityObservationContext = &AUMediaPlaybackTim
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+//    
+//    self.titleLabel.marqueeType = MLContinuous;
+//    self.titleLabel.animationCurve = UIViewAnimationOptionCurveEaseInOut;
+//    
+    self.titleLabel.marqueeType= MLContinuous;
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.titleLabel.lineBreakMode = NSLineBreakByTruncatingHead;
+    self.titleLabel.scrollDuration = 8.0;
+    self.titleLabel.fadeLength = 15.0f;
+    self.titleLabel.leadingBuffer = 20.0f;
+    
     [self musicPlayerStateChanged:nil];
-
-    [self updateShuffleAndRepeatButtons];
+//
+//    [self updateShuffleAndRepeatButtons];
         [[AVAudioSession sharedInstance]setCategory:AVAudioSessionCategoryPlayback error:nil];
+    
+//
+    
+    if (!self.item) {
+        
+        [self.closeBtn setEnabled:NO];
+        self.playButton.hidden = YES;
+        self.pauseButton.hidden = NO;
+        
+        UIAlertController * alert= [UIAlertController
+                                      alertControllerWithTitle:@"Notice"
+                                      message:@"No audio file selected. Player will automatically play dhmma live stream."
+                                      preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* okButton = [UIAlertAction
+                                    actionWithTitle:@"Ok"
+                                    style:UIAlertActionStyleDefault
+                                    handler:^(UIAlertAction * action)
+                                    {
+                                        DhammaItem *itemTmp = [DhammaItem new];
+                                        itemTmp.uid = @"1";
+                                        itemTmp.title = @"24 Hours Live Radio";
+                                        itemTmp.remotePath = @"https://edge.mixlr.com/channel/nmtev";
+                                        itemTmp.author = @"Thitsarparami";
+                                        self.item = itemTmp;
+                                        
+                                        [self playOrPause];
+                                        
+                                    }];
+
+        
+        [alert addAction:okButton];
+        
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    }else{
+        [self playOrPause];
+    }
+}
+
+- (void)playOrPause{
+    AUMediaPlayer *player = [AUMediaPlayer sharedInstance];
+    if (player.playbackStatus == AUMediaPlaybackStatusPlayerInactive || (self.item && ![[player.nowPlayingItem uid] isEqualToString:self.item.uid])) {
+        NSError *error;
+        [player playItem: self.item error:&error];
+    } else if (player.playbackStatus == AUMediaPlaybackStatusPlaying) {
+        [player pause];
+    } else {
+        [player play];
+    }
+
+}
+
+- (IBAction)shareButton:(id)sender{
+    [self shareContent];
+}
+-(void)shareContent{
+    
+//    NSString * message = @"My too cool Son";
+    
+//    UIImage * image = [UIImage imageNamed:@"mingon-sayardaw"];
+    
+    NSURL *dhammaURL = [NSURL URLWithString:self.item.remotePath];
+    
+//    NSArray * shareItems = @[message, myWebsite, image ];
+//    NSArray * excludeActivities = @[UIActivityTypePostToWeibo,
+//                                     UIActivityTypeMessage,
+//                                     UIActivityTypeMail,
+//                                     UIActivityTypePrint,
+//                                     UIActivityTypeCopyToPasteboard,
+//                                     UIActivityTypeAssignToContact,
+//                                     UIActivityTypeSaveToCameraRoll,
+//                                     UIActivityTypeAddToReadingList,
+//                                     UIActivityTypePostToFlickr,
+//                                     UIActivityTypePostToVimeo,
+//                                     UIActivityTypePostToTencentWeibo,
+//                                     UIActivityTypeAirDrop];
+//    
+//    UIActivityViewController * avc = [[UIActivityViewController alloc] initWithActivityItems:shareItems applicationActivities:nil];
+//    avc.excludedActivityTypes = excludeActivities;
+//    
+//    [self presentViewController:avc animated:YES completion:nil];
+    
+    SLComposeViewController * fbSheetOBJ = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    
+    [fbSheetOBJ setInitialText:self.item.dhammaTitle];
+    [fbSheetOBJ addURL:dhammaURL];
+    
+    
+    [fbSheetOBJ setCompletionHandler:^(SLComposeViewControllerResult result) {
+        
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                NSLog(@"Post Canceled :(");
+                break;
+            case SLComposeViewControllerResultDone:
+                NSLog(@"Sucessfully Post :)");
+                break;
+                
+            default:
+                break;
+        }
+    }];
+    
+    [self presentViewController:fbSheetOBJ animated:YES completion:Nil];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -68,9 +189,10 @@ static void *AUMediaPlaybackTimeValidityObservationContext = &AUMediaPlaybackTim
 
 
 - (void)viewDidAppear:(BOOL)animated {
+    
     [super viewDidAppear:animated];
-    self.playButton.hidden = NO;
-    self.pauseButton.hidden = YES;
+    
+    
     
     AUMediaPlayer *player = [self player];
     [player addObserver:self forKeyPath:@"currentPlaybackTime" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:AUMediaPlaybackCurrentTimeObservationContext];
@@ -80,6 +202,18 @@ static void *AUMediaPlaybackTimeValidityObservationContext = &AUMediaPlaybackTim
                                              selector:@selector(musicPlayerStateChanged:)
                                                  name:kAUMediaPlaybackStateDidChangeNotification
                                                object:nil];
+    
+    
+    
+    
+    
+    id<AUMediaItem>item = [[self player] nowPlayingItem];
+//    self.titleLabel.text = [item author];
+    self.titleLabel.text = [item title];
+
+    
+    
+
 }
 
 

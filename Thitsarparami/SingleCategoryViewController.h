@@ -22,4 +22,6 @@
 @property (nonatomic,strong) UIRefreshControl *refreshControl;
 
 @property (nonatomic, strong) MonkDhammaViewModel *monkDhammaVM;
+@property (nonatomic, strong) DhammaCategory *tmpDhammaCategory;
+@property (nonatomic, strong) NSArray *monkArray;
 @end

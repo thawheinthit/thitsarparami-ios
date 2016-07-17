@@ -38,7 +38,7 @@
     
     
     [manager GET:request parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        //        NSLog(@"get all items %@", responseObject);
+//                NSLog(@"get all items %@", responseObject);
         
         NSArray * itemsArray = [[[responseObject[@"data"][@"monk_list"] rac_sequence] map:^id(NSDictionary *monkData) {
             
@@ -65,7 +65,12 @@
 }
 
 + (NSString *)getAllRequestByCategory:(DhammaCategory *)categoryModel {
+    
+    
     NSString *subPath = [NSString stringWithFormat:APICategoryByID, categoryModel.objectId];
+    
+//    NSLog(@"Path %@",[NSString stringWithFormat:@"%@%@", APIPath, subPath]);
+    
     return [NSString stringWithFormat:@"%@%@", APIPath, subPath];
 }
 
@@ -91,6 +96,7 @@
 
     }
 }
+
 
 + (void)configureCategory:(DhammaCategory*)categoryModel withDictionary:(NSDictionary*)dictionary {
     categoryModel.objectId = dictionary[@"id"];

@@ -23,5 +23,6 @@
 @property (nonatomic, strong) MonkDhammaViewModel *vm;
 @property (nonatomic,strong) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UITabBar *tabbar;
+- (IBAction)playLive:(id)sender;
 
 @end

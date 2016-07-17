@@ -33,6 +33,9 @@
 
 
 // API
+#define APINews @"api/latestnews"
+#define APIRegister @"api/register"
+#define APIContact @"api/contact"
 #define APICategory @"api/categories/index"
 #define APICategoryByID @"api/categories/index/%@"
 #define APIMonk @"api/monk/index"

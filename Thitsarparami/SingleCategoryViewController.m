@@ -8,6 +8,7 @@
 
 #import "SingleCategoryViewController.h"
 #import "CategoryService.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface SingleCategoryViewController ()
 
@@ -18,7 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-
+    
     // Do any additional setup after loading the view.
     
     self.navigationItem.title = self.viewModel.singleCategory.categoryName;
@@ -64,7 +65,7 @@
     // Pull to refresh
     [self.refreshControl beginRefreshing];
     [[CategoryService getMonkByCategory:self.viewModel.singleCategory] subscribeNext:^(id monks) {
-        self.viewModel.singleCategory.monkArray = monks;
+        self.monkArray = monks;
         [self.monkTblView reloadData];
         [self.refreshControl endRefreshing];
     }error:^(NSError *error) {
@@ -83,16 +84,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    //    return tableData.count;
-    
-        return self.viewModel.singleCategory.monkArray.count;
+        return self.monkArray.count;
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    Monk *tmpMonk = self.viewModel.singleCategory.monkArray[indexPath.row];
-    
+    Monk *tmpMonk = [self.monkArray objectAtIndex:indexPath.row];
     
     MonkTableViewCell *tblViewCell = (MonkTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
@@ -100,19 +98,11 @@
     tblViewCell.monkName.text= tmpMonk.monkName;
     
     tblViewCell.tayarCount.text = [tmpMonk.dhammaCount stringValue];
+    NSURL * imageURL = [NSURL URLWithString:tmpMonk.monkImage];
     
-    dispatch_queue_t imageQueue = dispatch_queue_create("singleMonkQueue", nil);
-    dispatch_async(imageQueue, ^{
-        NSURL * imageURL = [NSURL URLWithString:tmpMonk.monkImage];
-        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-        UIImage * monkImage = [UIImage imageWithData:imageData];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            tblViewCell.monkImage.image = monkImage;
-        });
-        
-        
-    });
+    [tblViewCell.monkImage sd_setImageWithURL:imageURL
+                             placeholderImage:[UIImage imageNamed:@"loading-Icon"]];
+
     
     return tblViewCell;
 }
@@ -126,7 +116,7 @@
         MonkViewController *destination = segue.destinationViewController;
         NSIndexPath *path = [self.monkTblView indexPathForSelectedRow];
         
-        Monk *tmpMonk = [self.viewModel.singleCategory.monkArray objectAtIndex:path.row];
+        Monk *tmpMonk = [self.monkArray objectAtIndex:path.row];
         self.monkDhammaVM.monk = tmpMonk;
         destination.vm = self.monkDhammaVM;
         

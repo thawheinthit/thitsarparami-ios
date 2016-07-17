@@ -31,6 +31,7 @@
 @property (nonatomic, strong) MonkDhammaViewModel *vm;
 
 @property (weak, nonatomic) IBOutlet UILabel *dhammaLabel;
+@property (weak, nonatomic) IBOutlet UILabel *testUni;
 
 @property (nonatomic,strong) UIRefreshControl *refreshControl;
 

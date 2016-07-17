@@ -11,6 +11,8 @@
 #import "CategoryService.h"
 #import "MonkViewController.h"
 #import "SingleCategoryViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 //#import "MonkTableViewCell.h"
 
 @interface CategoryViewController ()
@@ -22,7 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationItem.title = @"Thitsarparami Society";
+    self.navigationItem.title = @"သစၥာပါရမီ(စကၤာပူ)";
+    
     
 
 //    UIImage *addImage = [UIImage imageNamed:@"logo-top"];
@@ -114,11 +117,11 @@
 //    myLabel.font = [UIFont fontWithName:@"Zawgyi_One" size:20];
     categoryTitle.text = [self tableView:tableView titleForHeaderInSection:section];
 //    categoryTitle.textAlignment = NSTextAlignmentLeft;
-    categoryTitle.textColor = [Utility colorFromHexString:@"#993D3D"];
+//    categoryTitle.textColor = [Utility colorFromHexString:@"#993D3D"];
 
     
     // create a button with image and add it to the view
-    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(tableView.bounds.size.width - 58, 5, 58 , 20)];
+    UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(tableView.bounds.size.width - 56, 5, 58 , 20)];
     [button setTitle:@"See All" forState:UIControlStateNormal];
 //    button.titleLabel.textAlignment = NSTextAlignmentRight;
 //    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
@@ -164,23 +167,72 @@
     
     
     MonkTableViewCell *tblViewCell = (MonkTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+//    
+//    
+//    
+//    tblViewCell.monkImage.image = [UIImage imageNamed:@"loading-Icon"];
+//    
+//    
+//    // Load the image with an GCD block executed in another thread
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        
+//        NSURL *imageURL = [NSURL URLWithString:tmpMonk.monkImage];
+//        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+//        
+//        if (imageData) {
+//            UIImage *offersImage = [UIImage imageWithData:imageData];
+//            if (offersImage) {
+//                dispatch_async(dispatch_get_main_queue(), ^{
+//                    MonkTableViewCell *tblViewCell = (MonkTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+//                    
+//                    if (tblViewCell) {
+//                        tblViewCell.monkImage.image = offersImage;
+//                    }
+//                });
+//            }
+//        }
+//    });
+//    
+    
+    
     
     tblViewCell.tayarCount.text = [tmpMonk.dhammaCount stringValue];
     tblViewCell.monkName.text= tmpMonk.monkName;
     
+ 
     
-    tblViewCell.monkImage.image = [UIImage imageNamed:@"loading-Icon"];
-    dispatch_queue_t imageQueue= dispatch_queue_create("imageQueue", nil);
-    dispatch_async(imageQueue, ^{
+    
+    NSURL *imageURL = [NSURL URLWithString:tmpMonk.monkImage];
+    
+    
+    
+    // Here we use the new provided sd_setImageWithURL: method to load the web image
+    [tblViewCell.monkImage sd_setImageWithURL:imageURL
+                      placeholderImage:[UIImage imageNamed:@"loading-Icon"]];
 
-        NSURL *imageURL = [NSURL URLWithString:tmpMonk.monkImage];
-        NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
-        UIImage *monkImage = [UIImage imageWithData:imageData];
 
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    tblViewCell.monkImage.image = monkImage;
-                });
-    });
+    
+    
+    
+    
+//        dispatch_queue_t imageQueue= dispatch_queue_create("imageQueue", nil);
+//    
+//    
+//        dispatch_async(imageQueue, ^{
+//            
+//            NSURL *imageURL = [NSURL URLWithString:tmpMonk.monkImage];
+//            NSData *imageData = [NSData dataWithContentsOfURL:imageURL];
+//            UIImage *monkImage = [UIImage imageWithData:imageData];
+//            
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                MonkTableViewCell *tblViewCell = (MonkTableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+//                if (tblViewCell) {
+//                    tblViewCell.monkImage.image = monkImage;
+//                }
+//            });
+//        });
+    
+    
     
     
     return tblViewCell;
@@ -214,4 +266,17 @@
 }
 */
 
+- (IBAction)playLive:(id)sender {
+    UINavigationController *navigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"viewController"];
+    PlayerViewController *controller = (PlayerViewController *) [navigationController visibleViewController];
+    
+    DhammaItem *itemTmp = [DhammaItem new];
+    itemTmp.uid = @"1";
+    itemTmp.title = @"24 Hours Live Radio";
+    itemTmp.remotePath = @"https://edge.mixlr.com/channel/nmtev";
+    itemTmp.author = @"Thitsarparami";
+    controller.item = itemTmp;
+    
+    [self presentViewController:navigationController animated:YES completion:nil];
+}
 @end
