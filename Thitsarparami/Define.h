@@ -29,7 +29,9 @@
 
 
 // END POINT
-#define APIPath @"http://thitsarparamisociety.com/ios/index.php/"
+#define APIPathProduction @"https://www.thitsarparamisociety.com/ios/index.php/"
+#define APIPathDevelopment @"http://ec2-54-169-247-138.ap-southeast-1.compute.amazonaws.com/ios/index.php/"
+#define APIPath @"http://ec2-54-169-247-138.ap-southeast-1.compute.amazonaws.com/ios/index.php/"
 
 
 // API

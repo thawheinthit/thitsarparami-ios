@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.navigationItem.title = @"သစၥာပါရမီ(စကၤာပူ)";
 
     self.monkName.text = self.vm.monk.monkName;
     self.dhammaCount.text = [self.vm.monk.dhammaCount stringValue];
@@ -42,9 +44,11 @@
     [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.tayarTblView addSubview:self.refreshControl];
     
+
+}
+
+- (void) viewWillAppear:(BOOL)animated{
     [self loadItems];
-
-
 }
 
 

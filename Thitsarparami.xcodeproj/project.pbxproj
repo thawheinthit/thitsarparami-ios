@@ -156,6 +156,7 @@
 		8E9851F11C54BFD700EF30DA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		8EB4B7DE1C81B77B003E7578 /* ContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewController.h; sourceTree = "<group>"; };
 		8EB4B7DF1C81B77B003E7578 /* ContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewController.m; sourceTree = "<group>"; };
+		8EB4FF1C1DA0FD53004134D9 /* Thitsarparami.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Thitsarparami.entitlements; sourceTree = "<group>"; };
 		8EC473C51D3BC2CB0093A31A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8ED4755E1CC3DC2B00BC0303 /* ContactViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactViewModel.h; sourceTree = "<group>"; };
 		8ED4755F1CC3DC2B00BC0303 /* ContactViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactViewModel.m; sourceTree = "<group>"; };
@@ -246,6 +247,7 @@
 		8E00B37E1C1D3F12007474FA /* Thitsarparami */ = {
 			isa = PBXGroup;
 			children = (
+				8EB4FF1C1DA0FD53004134D9 /* Thitsarparami.entitlements */,
 				8E3922261C849CA4000FAB1A /* Custom */,
 				8E90AF101C5371140080A737 /* images */,
 				8E00B3B71C1D4187007474FA /* Font */,
@@ -835,7 +837,8 @@
 			baseConfigurationReference = 20531354D71747D7A4C75E1E /* Pods-Thitsarparami.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Thaw Hein Thit (7982ZQT6N3)";
+				CODE_SIGN_ENTITLEMENTS = Thitsarparami/Thitsarparami.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Thaw Thit (G6D5662P76)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Thitsarparami/Info.plist;
@@ -853,7 +856,9 @@
 			baseConfigurationReference = 2FCCB15B70E2FA9135509D6F /* Pods-Thitsarparami.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Thaw Hein Thit (7982ZQT6N3)";
+				CODE_SIGN_ENTITLEMENTS = Thitsarparami/Thitsarparami.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Thaw Thit (G6D5662P76)";
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Thitsarparami/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;

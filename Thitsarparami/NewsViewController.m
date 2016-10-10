@@ -9,8 +9,11 @@
 #import "NewsViewController.h"
 #import "NewsService.h"
 #import "NewsDetailViewController.h"
+#import "AppDelegate.h"
 
-@interface NewsViewController()
+@interface NewsViewController(){
+//    AppDelegate *appdelegate;
+}
 @end
 
 @implementation NewsViewController
@@ -33,8 +36,20 @@
     
     
     
-    NSLog(@"Count %lu",[self.newsArray count]);
+//    NSLog(@"Count %lu",[self.newsArray count]);
+
 }
+
+//- (void)viewWillAppear:(BOOL)animated{
+//    appdelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+//    
+//    UIViewController *viewController = [appdelegate.tabBarController.viewControllers objectAtIndex:1];
+//    
+//    viewController.tabBarItem.badgeValue = nil;
+//    
+//    
+//}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

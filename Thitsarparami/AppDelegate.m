@@ -12,8 +12,11 @@
 #import "Setting.h"
 #import "RegisterService.h"
 #import <AFNetworking/AFNetworking.h>
+#import "NewsViewController.h"
+
 
 @interface AppDelegate ()
+
 @end
 
 
@@ -43,14 +46,14 @@
     
     // PUSH
     
-//    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
-//        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
-//                                                                                             |UIUserNotificationTypeSound
-//                                                                                             |UIUserNotificationTypeAlert) categories:nil];
-//        [application registerUserNotificationSettings:settings];
-//    }
-//    
-//    application.applicationIconBadgeNumber = 0;
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:(UIUserNotificationTypeBadge
+                                                                                             |UIUserNotificationTypeSound
+                                                                                             |UIUserNotificationTypeAlert) categories:nil];
+        [application registerUserNotificationSettings:settings];
+    }
+    
+    application.applicationIconBadgeNumber = 0;
     
     
     return YES;
@@ -104,7 +107,7 @@
         [userDefault synchronize];
         
         Setting *tmpSetting = [Setting new];
-        tmpSetting.deviceName = @"";
+        tmpSetting.deviceName = [[UIDevice currentDevice]name];
         tmpSetting.deviceToken = tokenString;
         tmpSetting.notiStatus = @1;
         
@@ -162,16 +165,91 @@
     if ( application.applicationState == UIApplicationStateInactive)
     {
         //opened from a push notification when the app was on background
-        
+        [self loadNews];
         NSLog(@"userInfo->%@",[userInfo objectForKey:@"aps"]);
     }
     else if(application.applicationState == UIApplicationStateActive)
     {
         // a push notification when the app is running. So that you can display an alert and push in any view
+        [self alertNoti];
         
         NSLog(@"userInfo->%@",[userInfo objectForKey:@"aps"]);
+    }else if([UIApplication sharedApplication].applicationIconBadgeNumber !=0){
+        [self loadBadges];
     }
 
+}
+
+-(void)alertNoti{
+    UIWindow* topWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    topWindow.rootViewController = [UIViewController new];
+    topWindow.windowLevel = UIWindowLevelAlert + 1;
+    
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Latest News"
+                                 message:@"You have just got a news. Do you want to read?"
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"Yes, please"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action) {
+                                    //Handle your yes please button action here
+                                    [self loadNews];
+                                    topWindow.hidden = YES;
+                                    
+                                }];
+    
+    UIAlertAction* noButton = [UIAlertAction
+                               actionWithTitle:@"No, thanks"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                                   //Handle no, thanks button
+                                   
+                                   [self loadBadges];
+                                   topWindow.hidden = YES;
+                                   
+                               }];
+    
+    [alert addAction:yesButton];
+    [alert addAction:noButton];
+    [topWindow makeKeyAndVisible];
+    
+    
+    
+    [topWindow.rootViewController presentViewController:alert animated:YES completion:nil];
+    
+}
+
+- (void)loadNews {
+    self.tabBarController = (UITabBarController *)self.window.rootViewController;
+    
+    [self.tabBarController setSelectedIndex:1];
+    UINavigationController *newsVC = [[self.tabBarController viewControllers] objectAtIndex:1];
+    UITabBar *tabBar = self.tabBarController.tabBar;
+    
+    tabBar.hidden = NO;
+    
+    [newsVC viewDidLoad];
+    
+}
+
+- (void)loadBadges {
+    UITabBarController *tbc = (UITabBarController *)self.window.rootViewController;
+    
+    [tbc setSelectedIndex:0];
+    
+    UITabBar *tabBar = tbc.tabBar;
+    
+    tabBar.hidden = NO;
+    
+        UITabBarItem *itemToBadge = tbc.tabBar.items[1];
+        int currentTabValue = [itemToBadge.badgeValue intValue];
+        int newTabValue = currentTabValue + 1; // Or whatever you want to calculate
+        itemToBadge.badgeValue = [NSString stringWithFormat:@"%d", newTabValue];
+    
+    
+    
 }
 
 @end

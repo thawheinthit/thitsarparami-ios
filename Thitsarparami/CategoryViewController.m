@@ -13,6 +13,7 @@
 #import "SingleCategoryViewController.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
+
 //#import "MonkTableViewCell.h"
 
 @interface CategoryViewController ()
@@ -25,7 +26,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"သစၥာပါရမီ(စကၤာပူ)";
-    
     
 
 //    UIImage *addImage = [UIImage imageNamed:@"logo-top"];
@@ -42,17 +42,23 @@
     self.refreshControl= [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.categoryTblView addSubview:self.refreshControl];
-
-    
-    //    self. displaysSearchBarInNavigationBar = YES
     
     
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:nil action:nil];
     
-    [self loadItems];
     self.viewModel = [DhammaCategoryViewModel new];
     self.vm = [MonkDhammaViewModel new];
     self.monk = [Monk new];
+    
+    [self loadItems];
+
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    UITabBarController *tabBarController = (UITabBarController*)[UIApplication sharedApplication].keyWindow.rootViewController ;
+    
+    [tabBarController setDelegate:self];
+    
 
 }
 
@@ -62,7 +68,6 @@
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    // Do your job, when done:
     [self loadItems];
     [refreshControl endRefreshing];
 }
@@ -114,17 +119,11 @@
     UILabel *categoryTitle = [[UILabel alloc] init];
     categoryTitle.frame = CGRectMake(20, 4, tableView.bounds.size.width - 10, 20);
     categoryTitle.font = [UIFont boldSystemFontOfSize:12];
-//    myLabel.font = [UIFont fontWithName:@"Zawgyi_One" size:20];
-    categoryTitle.text = [self tableView:tableView titleForHeaderInSection:section];
-//    categoryTitle.textAlignment = NSTextAlignmentLeft;
-//    categoryTitle.textColor = [Utility colorFromHexString:@"#993D3D"];
 
+    categoryTitle.text = [self tableView:tableView titleForHeaderInSection:section];
     
-    // create a button with image and add it to the view
     UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(tableView.bounds.size.width - 56, 5, 58 , 20)];
     [button setTitle:@"See All" forState:UIControlStateNormal];
-//    button.titleLabel.textAlignment = NSTextAlignmentRight;
-//    button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     [button setTitleColor:[Utility colorFromHexString:@"#993D3D"] forState:UIControlStateNormal];
     button.titleLabel.font = [UIFont boldSystemFontOfSize:11];
     
@@ -279,4 +278,30 @@
     
     [self presentViewController:navigationController animated:YES completion:nil];
 }
+
+
+//- (void)tabBar:(UITabBar *)tabBar
+// didSelectItem:(UITabBarItem *)item{
+//    NSLog(@"aaaa");
+//    if(item.tag == 1){
+//        item.badgeValue = nil;
+//        NSLog(@"adsfas");
+//    }
+//}
+
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    
+    UITabBar *tabBar = tabBarController.tabBar;
+    
+    
+    if(tabBar.items[1])
+    {
+        UITabBarItem *itemToBadge = tabBar.items[1];
+        itemToBadge.badgeValue = nil;
+        NSLog(@"%@",viewController);
+    }
+
+
+}
+
 @end
